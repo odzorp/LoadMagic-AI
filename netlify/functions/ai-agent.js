@@ -33,7 +33,7 @@ export default async function handler(request) {
 
     // Call Cloudflare Workers AI
     const cfResponse = await fetch(
-      "https://api.cloudflare.com/client/v4/accounts/YOUR_ACCOUNT_ID/ai/run/@cf/meta/llama-3-8b-instruct",
+      "https://api.cloudflare.com/client/v4/accounts/79cb91ad5275bebd4abfb6e03985c197/ai/run/@cf/meta/llama-3-8b-instruct",
       {
         method: "POST",
         headers: {
