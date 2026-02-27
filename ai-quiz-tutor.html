@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz Tutor Agent - Get explanations for quiz questions">
+    <title>Quiz Tutor Agent | QA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/agent.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-brand">
+                    <img src="assets/images/profile.jpg" alt="Philip Odzor">
+                    <div class="nav-brand-text">
+                        <span>Philip Odzor</span>
+                        <small>QA Academy</small>
+                    </div>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="tutorials.html">Tutorials</a></li>
+                    <li><a href="ai-agents.html">AI Agents</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="agent-hero" style="background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #ec4899 100%);">
+        <div class="container text-center">
+            <div class="agent-icon">📚</div>
+            <h1>Quiz Tutor Agent</h1>
+            <p class="agent-tagline">Stuck on a quiz question? Get detailed explanations that help you understand the why behind answers.</p>
+            <div class="agent-badge">
+                <span>⚡</span>
+                <span>Powered by Llama 3 AI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="agent-main">
+        <div class="container">
+            <div class="agent-grid">
+                <!-- Main Input Area -->
+                <div>
+                    <div class="agent-input-section">
+                        <h2>Ask Your Question</h2>
+                        <textarea 
+                            id="agentInput" 
+                            class="agent-textarea" 
+                            placeholder="Paste the quiz question and explain which answer you chose and why.
+Example:
+Question: What is the default timeout in Playwright?
+Options: a) 5 seconds b) 30 seconds c) 60 seconds d) 10 seconds
+I chose option a) 5 seconds because..."
+                        ></textarea>
+                        <button id="submitBtn" class="agent-submit" onclick="submitRequest()">
+                            <span>💡</span>
+                            <span>Get Explanation</span>
+                        </button>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="loadingState" class="agent-loading" style="display: none;">
+                        <div class="agent-loading-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span>Finding the best explanation...</span>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="errorState" class="agent-error" style="display: none;">
+                        <div class="agent-error-icon">⚠️</div>
+                        <div class="agent-error-content">
+                            <h4>Something went wrong</h4>
+                            <p id="errorMessage">Unable to process your request. Please try again.</p>
+                        </div>
+                    </div>
+
+                    <!-- Response Section -->
+                    <div id="responseSection" class="agent-response">
+                        <div class="agent-response-header">
+                            <h3>💡 Explanation</h3>
+                            <button class="agent-copy-btn" onclick="copyResponse()">
+                                <span>📋</span> Copy
+                            </button>
+                        </div>
+                        <div id="responseContent" class="agent-response-content"></div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="agent-sidebar">
+                    <div class="agent-info-card">
+                        <h3>📌 What This Agent Helps With</h3>
+                        <ul>
+                            <li>Quiz question explanations</li>
+                            <li>Concept clarifications</li>
+                            <li>Why answers are correct</li>
+                            <li>Real-world examples</li>
+                            <li>Related topic guidance</li>
+                        </ul>
+                    </div>
+
+                    <div class="agent-info-card">
+                        <h3>🎯 Topics Covered</h3>
+                        <ul>
+                            <li>Test Automation</li>
+                            <li>API Testing</li>
+                            <li>Performance Testing</li>
+                            <li>BDD & Cucumber</li>
+                            <li>CI/CD</li>
+                        </ul>
+                    </div>
+
+                    <div class="agent-tips">
+                        <h4>💡 Tips for Better Answers</h4>
+                        <p>Include which answer you selected and your reasoning. This helps me explain where your thinking might have gone wrong.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>QA Academy</h3>
+                    <p>Expert-led QA testing education</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="tutorials.html">Tutorials</a>
+                    <a href="ai-agents.html">AI Agents</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QA Academy. All rights reserved.</p>
+            </div>
+            <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-size: 0.85rem; opacity: 0.7;">🤖 AI-Powered Development<br>Built with AI: OpenCode Big Pickle • GLM-5 • Kimi 2.5 • MiniMax 2.5</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container modal-info" id="modalContainer">
+            <div class="modal-header">
+                <h3 id="modalTitle">Notification</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">Message goes here</p>
+                <div class="modal-timer">
+                    <div class="modal-timer-bar" id="modalTimerBar"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="closeModal()">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/agent-client.js"></script>
+    <script>
+        const AGENT_TYPE = 'quizTutor';
+
+        async function submitRequest() {
+            const input = document.getElementById('agentInput').value;
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingState = document.getElementById('loadingState');
+            const errorState = document.getElementById('errorState');
+            const errorMessage = document.getElementById('errorMessage');
+            const responseSection = document.getElementById('responseSection');
+            const responseContent = document.getElementById('responseContent');
+
+            errorState.style.display = 'none';
+            responseSection.classList.remove('show');
+
+            if (!input.trim()) {
+                showModal('Input Required', 'Please enter your question for explanation.', 'warning');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="agent-loading-dots"><span></span><span></span><span></span></span> Processing...';
+            loadingState.style.display = 'flex';
+
+            try {
+                const result = await agentClient.callAgent(input, AGENT_TYPE);
+                loadingState.style.display = 'none';
+
+                if (result.error) {
+                    errorMessage.textContent = result.error;
+                    errorState.style.display = 'flex';
+                } else {
+                    responseContent.innerHTML = agentClient.formatResponse(result.response);
+                    responseSection.classList.add('show');
+                }
+            } catch (error) {
+                loadingState.style.display = 'none';
+                errorMessage.textContent = error.message || 'An unexpected error occurred.';
+                errorState.style.display = 'flex';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>💡</span><span>Get Explanation</span>';
+            }
+        }
+
+        function copyResponse() {
+            const responseText = document.getElementById('responseContent').innerText;
+            agentClient.copyToClipboard(responseText).then(() => {
+                showModal('Copied!', 'Explanation copied to clipboard.', 'success');
+            });
+        }
+
+        document.getElementById('agentInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                submitRequest();
+            }
+        });
+    </script>
+</body>
+</html>

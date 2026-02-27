@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="QA Academy AI Agents - AI-powered assistants for software testing education">
+    <title>AI Agents | QA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/agent.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-brand">
+                    <img src="assets/images/profile.jpg" alt="Philip Odzor">
+                    <div class="nav-brand-text">
+                        <span>Philip Odzor</span>
+                        <small>QA Academy</small>
+                    </div>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="tutorials.html">Tutorials</a></li>
+                    <li><a href="ai-agents.html" class="active">AI Agents</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="agent-hero">
+        <div class="container text-center">
+            <div class="agent-icon">🤖</div>
+            <h1>AI-Powered Learning Assistants</h1>
+            <p class="agent-tagline">Master software testing with personalized AI guidance. Get code reviews, learn test design, and accelerate your QA career.</p>
+            <div class="agent-badge">
+                <span>⚡</span>
+                <span>Powered by Llama 3 AI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="agent-main">
+        <div class="container">
+            <div class="text-center mb-3">
+                <h2>Choose Your AI Assistant</h2>
+                <p class="text-gray">Select an agent below based on what you need help with</p>
+            </div>
+
+            <div class="agent-cards-grid">
+                <!-- Code Review Agent -->
+                <a href="ai-code-review.html" class="agent-card-item">
+                    <div class="agent-card-icon">🔍</div>
+                    <h3>Code Review Agent</h3>
+                    <p>Get expert reviews of your Playwright, Cypress, or Selenium test automation code with actionable feedback.</p>
+                    <div class="agent-card-meta">
+                        <span>📝 Review</span>
+                        <span>⚡ Instant</span>
+                    </div>
+                </a>
+
+                <!-- Quiz Tutor Agent -->
+                <a href="ai-quiz-tutor.html" class="agent-card-item">
+                    <div class="agent-card-icon">📚</div>
+                    <h3>Quiz Tutor Agent</h3>
+                    <p>Stuck on a quiz question? Get detailed explanations that help you understand the why behind answers.</p>
+                    <div class="agent-card-meta">
+                        <span>🎓 Learn</span>
+                        <span>💡 Explain</span>
+                    </div>
+                </a>
+
+                <!-- API Tester Agent -->
+                <a href="ai-api-tester.html" class="agent-card-item">
+                    <div class="agent-card-icon">🔌</div>
+                    <h3>API Tester Agent</h3>
+                    <p>Need help with Postman, REST Assured, or API testing concepts? Get expert guidance instantly.</p>
+                    <div class="agent-card-meta">
+                        <span>🌐 REST APIs</span>
+                        <span>⚡ Instant</span>
+                    </div>
+                </a>
+
+                <!-- Test Design Agent -->
+                <a href="ai-test-design.html" class="agent-card-item">
+                    <div class="agent-card-icon">📋</div>
+                    <h3>Test Design Agent</h3>
+                    <p>Generate comprehensive test cases and test plans from requirements. Apply industry best practices.</p>
+                    <div class="agent-card-meta">
+                        <span>🎯 Planning</span>
+                        <span>📖 Beginner</span>
+                    </div>
+                </a>
+
+                <!-- BDD Writer Agent -->
+                <a href="ai-bdd-writer.html" class="agent-card-item">
+                    <div class="agent-card-icon">🥒</div>
+                    <h3>BDD Writer Agent <p>Transform requirements</h3>
+                    into clean, maintainable Gherkin scenarios for Cucumber and BDD frameworks.</p>
+                    <div class="agent-card-meta">
+                        <span>🥒 Gherkin</span>
+                        <span>📖 Intermediate</span>
+                    </div>
+                </a>
+
+                <!-- Performance Agent -->
+                <a href="ai-performance.html" class="agent-card-item">
+                    <div class="agent-card-icon">⚡</div>
+                    <h3>Performance Agent</h3>
+                    <p>Get guidance on load testing with JMeter and LoadMagic.AI. Optimize your performance test scenarios.</p>
+                    <div class="agent-card-meta">
+                        <span>📈 Load Testing</span>
+                        <span>🔧 Tools</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Info Section -->
+            <div style="max-width: 800px; margin: 4rem auto 0; text-align: center;">
+                <div class="agent-tips" style="padding: 2rem; border-radius: 16px;">
+                    <h4 style="font-size: 1.1rem; margin-bottom: 0.75rem;">💡 How It Works</h4>
+                    <p style="margin: 0; font-size: 0.95rem; color: #78350f; line-height: 1.6;">
+                        Our AI agents are powered by advanced language models and trained on QA best practices. 
+                        Simply select an agent, describe your question or paste your code, and get instant, 
+                        personalized assistance. All responses are educational and designed to help you learn.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>QA Academy</h3>
+                    <p>Expert-led QA testing education</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="tutorials.html">Tutorials</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QA Academy. All rights reserved.</p>
+            </div>
+            <div style="text-align: center; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="font-size: 0.85rem; opacity: 0.7;">🤖 AI-Powered Development<br>Built with AI: OpenCode Big Pickle • GLM-5 • Kimi 2.5 • MiniMax 2.5</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
